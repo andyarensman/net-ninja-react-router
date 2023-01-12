@@ -12,6 +12,7 @@ import Faq from './pages/help/Faq'
 import Contact from './pages/help/Contact'
 import Careers, { careersLoader } from './pages/careers/Careers'
 import CareerDetails, { careerDetailsLoader } from './pages/careers/CareerDetails'
+import CareersError from './pages/careers/CareersError'
 
 // layout
 import RootLayout from './layouts/RootLayout'
@@ -30,7 +31,11 @@ const router = createBrowserRouter(
         <Route path="contact" element={<Contact />} />
       </Route>
 
-      <Route path="careers" element={<CareersLayout />}>
+      <Route
+        path="careers"
+        element={<CareersLayout />}
+        errorElement={<CareersError />}
+      >
         <Route
           index
           element={<Careers />}
